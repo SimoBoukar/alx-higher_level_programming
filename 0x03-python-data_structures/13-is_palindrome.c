@@ -23,6 +23,7 @@ int is_palindrome(listint_t **head)
  * @head: head list
  * @end: end of list
  *
+ * Return: 1 if success, 0 if failure
 */
 
 int palind(listint_t **head, listint_t *end)
