@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string is not str and None:
+    if not isinstance(roman_string, str):
         return 0
     tot = 0
     num = 0
@@ -9,5 +9,5 @@ def roman_to_int(roman_string):
             )
     for i in reversed(roman_string):
         num = roman_num[i]
-        tot += num if tot < num * 5 else -num
+        tot += num if tot < num * 4 else -num
     return tot
