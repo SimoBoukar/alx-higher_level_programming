@@ -35,6 +35,7 @@ class Square:
                 TypeError: if size is not int.
                 ValueError: if size if less than 0.
             """
+            return self.__size
 
         @size.setter
         def size(self, value):
