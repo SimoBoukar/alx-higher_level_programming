@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Square Module"""
-Class Square:
+class Square:
     """Define a Class named Square"""
     def __init__(self, size=0):
         """Constructor:
