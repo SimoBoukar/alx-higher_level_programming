@@ -4,7 +4,9 @@
 
 class Rectangle:
     """class Rectangle that defines a rectangle"""
+
     number_of_instances = 0
+
     def area(self):
         """return area of a rectangle"""
         return self.__width * self.__height
