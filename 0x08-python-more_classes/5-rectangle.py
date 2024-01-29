@@ -54,11 +54,11 @@ class Rectangle:
             string += "\n".join("#" * self.__width
                                 for i in range(self.__height))
         return string
-        
+
     def __repr__(self):
         """return a string representation of the rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-        
+
     def __del__(self):
         """Print the message Bye rectangle..."""
         print("Bye rectangle...")

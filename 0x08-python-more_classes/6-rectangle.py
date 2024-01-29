@@ -55,14 +55,16 @@ class Rectangle:
         """returns printable string"""
         string = ""
         if self.__width != 0 and self.__height != 0:
-            string += "\n".join("#" * self.__width
-                                for i in range(self.__height))
+            string += "\n".join(
+                    "#" * self.__width
+                    for i in range(self.__height)
+                    )
         return string
-        
+
     def __repr__(self):
         """return a string representation of the rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-        
+
     def __del__(self):
         """Print the message Bye rectangle..."""
         print("Bye rectangle...")
