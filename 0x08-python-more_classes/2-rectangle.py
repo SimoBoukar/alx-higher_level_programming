@@ -12,7 +12,7 @@ class Rectangle:
         """perimeter of a rectangle"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return ((self.__width + self.__heigh) * 2)
+        return ((self.__width * 2) + (self.__heigh * 2))
 
     def __init__(self, width=0, height=0):
         """initialize rectangle"""
