@@ -5,14 +5,14 @@
 class Rectangle:
     """class Rectangle that defines a rectangle"""
     def area(self):
-        """area of a rectangle"""
+        """return area of a rectangle"""
         return self.__width * self.__height
 
     def perimeter(self):
-        """perimeter of a rectangle"""
+        """return perimeter of a rectangle"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        return (self.__width + self.__heigh) * 2
+        return ((self.__width + self.__heigh) * 2)
 
     def __init__(self, width=0, height=0):
         """initialize rectangle"""
