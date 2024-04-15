@@ -10,6 +10,10 @@ from sqlalchemy.orm import sessionmaker
 from relationship_city import City
 
 if __name__ == "__main__":
+    """
+    Access to the database and get the cities
+    from the database.
+    """
         engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
                                                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
                                                           pool_pre_ping=True)
@@ -19,8 +23,8 @@ if __name__ == "__main__":
 
         new_state = State(name='California')
         new_city = City(name='San Francisco')
-
         new_state.cities.append(new_city)
 
         session.add(new_state)
         session.commit()
+        session.close()
