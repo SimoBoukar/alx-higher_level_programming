@@ -1,24 +1,26 @@
 #!/usr/bin/python3
-"""Finds a peak in a list of unsorted integers"""
+"""Finds the peak in an unsorted list of integers"""
 
 
 def find_peak(list_of_integers):
-        """Finds a peak in list_of_integers"""
+        """Finds the peak in an unsorted list of ints"""
+        if len(list_of_integers) > 1:
+                if list_of_integers[0] >= list_of_integers[1]:
+                        return list_of_integers[0]
+        if list_of_integers[-1] >= list_of_integers[-2]:
+                    return list_of_integers[-1]
+        return _find_peak(list_of_integers, 0, len(list_of_integers))
+    if not list_of_integers:
+            return None
+    return list_of_integers[0]
 
-        if list_of_integers is None or list_of_integers == []:
+
+def _find_peak(lint, start, stop):
+        """Recursively finds peak"""
+        if stop - start < 2:
                 return None
-    lo = 0
-    hi = len(list_of_integers)
-    mid = ((hi - lo) // 2) + lo
-    mid = int(mid)
-    if hi == 1:
-            return list_of_integers[0]
-    if hi == 2:
-            return max(list_of_integers)
-    if list_of_integers[mid] >= list_of_integers[mid - 1] and\
-            list_of_integers[mid] >= list_of_integers[mid + 1]:
-            return list_of_integers[mid]
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
-            return find_peak(list_of_integers[mid:])
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
-            return find_peak(list_of_integers[:mid])
+    mid = (start + stop) // 2
+    if lint[mid] >= lint[mid - 1] and lint[mid] >= lint[mid + 1]:
+            return lint[mid]
+    return _find_peak(lint, start, mid) or _find_peak(lint, mid, stop)
+
